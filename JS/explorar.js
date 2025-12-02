@@ -18,7 +18,7 @@ if (!localStorage.getItem("itens")) {
       quantidade: 1,
       dono: "Usuário Teste",
       tipo: "oferta",
-      foto: "/img/celular2.jpeg",
+      foto: "./celular2.jpeg",
       status: "ativo",
       criadoEm: new Date().toISOString(),
       expiraEm: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
@@ -177,6 +177,7 @@ if (botaoLimpar) botaoLimpar.addEventListener("click", () => {
 });
 
 aplicarFiltros();
+
 
 
 
