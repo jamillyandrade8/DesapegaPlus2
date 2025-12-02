@@ -6,7 +6,6 @@ if (!usuarioLogado_explorar) {
   window.location.href = "login.html";
 }
 
-// 🔹 Criar dados fictícios se não houver itens salvos
 if (!localStorage.getItem("itens")) {
   const dadosFicticios = [
     {
@@ -19,7 +18,7 @@ if (!localStorage.getItem("itens")) {
       quantidade: 1,
       dono: "Usuário Teste",
       tipo: "oferta",
-      foto: "./img/celular.jpg",
+      foto: "./img/celular2.jpeg",
       status: "ativo",
       criadoEm: new Date().toISOString(),
       expiraEm: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
@@ -34,7 +33,7 @@ if (!localStorage.getItem("itens")) {
       quantidade: 1,
       dono: "Usuário Teste",
       tipo: "oferta",
-      foto: "./img/cercado.jpg",
+      foto: "./img/cercado.jpeg",
       status: "ativo",
       criadoEm: new Date().toISOString(),
       expiraEm: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString()
@@ -178,3 +177,4 @@ if (botaoLimpar) botaoLimpar.addEventListener("click", () => {
 });
 
 aplicarFiltros();
+
