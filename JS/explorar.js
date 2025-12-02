@@ -6,6 +6,44 @@ if (!usuarioLogado_explorar) {
   window.location.href = "login.html";
 }
 
+// 🔹 Criar dados fictícios se não houver itens salvos
+if (!localStorage.getItem("itens")) {
+  const dadosFicticios = [
+    {
+      id: "1",
+      titulo: "Celular - Samsung A13",
+      descricao: "Tela trocada, funcionando bem.",
+      categoria: "eletronico",
+      cidade: "Sorocaba - São Paulo",
+      condicao: "usado",
+      quantidade: 1,
+      dono: "Usuário Teste",
+      tipo: "oferta",
+      foto: "./img/celular.jpg",
+      status: "ativo",
+      criadoEm: new Date().toISOString(),
+      expiraEm: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
+    },
+    {
+      id: "2",
+      titulo: "Cercado para bebê",
+      descricao: "Colorido e seguro para bebês.",
+      categoria: "moveis",
+      cidade: "Sorocaba - São Paulo",
+      condicao: "novo",
+      quantidade: 1,
+      dono: "Usuário Teste",
+      tipo: "oferta",
+      foto: "./img/cercado.jpg",
+      status: "ativo",
+      criadoEm: new Date().toISOString(),
+      expiraEm: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString()
+    }
+  ];
+
+  localStorage.setItem("itens", JSON.stringify(dadosFicticios));
+}
+
 const listaCards = document.getElementById("lista-cards");
 const campoBusca = document.getElementById("campo-busca");
 const filtroCategoria = document.getElementById("filtro-categoria");
