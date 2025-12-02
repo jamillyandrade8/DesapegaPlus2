@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href=".//css/sobre.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Desapega + | Sobre nós</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="logo"> <a href="index.html" style="text-decoration: none; color: white;"> Desapega <span>+</span></a></h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a id="sair">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="boas-vindas">
+            <h1>Bem vindo ao Desapega+</h1>
+            <p id="saudacao">Carregando...</p>
+        </section>
+
+        <section class="sobre-section">
+            <h1>Sobre o Desapega +</h1>
+            <p class="subtexto">O <strong>Desapega+ </strong> é uma plataforma que conecta pessoas para doação, troca e reaproveitamento de objetos. Acreditamos que pequenas ações geram grande impacto — menos desperdício e mais colaboração local.</p>
+
+            <div class="cards">
+                <article class="card">
+                    <h3>Missão</h3>
+                    <p>Facilitar o desapego consciente, oferecendo um espaço prático e seguro para que itens em bom estado encontrem novos donos.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Visão</h3>
+                    <p>Ser referência em iniciativas locais de economia circular, incentivando a troca, a doação e a reutilização como hábitos do dia a dia.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Valores</h3>
+                    <p>Sustentabilidade, empatia, transparência e comunidade — orientando tudo o que fazemos.</p>
+                </article>
+            </div>
+
+            <div class="chamada-doar" style="margin-top:18px; text-align:center;">
+                <p>Pronto para ajudar ? <a class="botao botao-secundario" href="explorar.html">Desapega+</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+         const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado")); //localStorage.getItem(""):Lê o valor que salvamos antes. Se não existir, retorna null.
+        
+        if(!usuarioLogado){
+            window.location.href = "login.html"
+        } else {
+            document.getElementById("saudacao").textContent = `Olá! ${usuarioLogado.nome}! Seja bem-vindo(a) ao Desapega+ !`; //.textContent = ... :Altera o texto interno desse <p>, inserindo o nome do usuário dentro da saudação.
+        }
+
+        const botaoSair = document.getElementById("sair");
+        botaoSair.addEventListener("click", () => {
+            localStorage.removeItem("usuarioLogado"); // apaga sessão
+            window.location.href = "index.html"; 
+        })
+    </script>
+
+</body>
+</html>

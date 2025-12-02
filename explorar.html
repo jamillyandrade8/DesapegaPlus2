@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar | Desapega+</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/explorar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="logo">
+            <a href="explorar.html" style="text-decoration: none; color: white;">
+                Desapega <span>+</span>
+            </a>
+        </h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="doar.html">Doar</a></li>
+
+                <li><a id="btnSair" href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="explorar">
+
+        <div class="controles-topo">
+
+            <div class="box-busca">
+                <input type="search" id="campo-busca" class="campo-busca" placeholder="Buscar por item...">
+            </div>
+
+            <div class="box-filtros">
+
+                <select id="filtro-categoria" class="select-filtro">
+                    <option value="">Todas as categorias</option>
+                    <option value="roupa">Roupa</option>
+                    <option value="calcado">Calçado</option>
+                    <option value="brinquedo">Brinquedo</option>
+                    <option value="moveis">Móveis</option>
+                    <option value="livros">Livros</option>
+                    <option value="eletronico">Eletrônico</option>
+                    <option value="outro">Outro</option>
+                </select>
+
+                <!-- ADICIONADO: mostrar apenas ofertas, pedidos ou ambos -->
+                <select id="filtro-tipo" class="select-filtro">
+                    <option value="ambos">Mostrar: Ambos</option>
+                    <option value="oferta">Ofertas</option>
+                    <option value="pedido">Pedidos</option>
+                </select>
+
+                <select id="filtro-ordenacao" class="select-filtro">
+                  <option value="relevancia">Relevância</option>
+                  <option value="recentes">Mais recentes</option>
+                  <option value="urgencia">Mais urgentes</option>
+              </select>
+
+                <!-- ADICIONADO: filtro de cidade -->
+                <input type="text" id="filtro-cidade" class="select-filtro" placeholder="Cidade">
+
+
+                <button id="limpar-filtros" class="btn-limpar-filtros">Limpar filtros</button>
+
+                <p class="contador-itens" id="contador-itens">0 resultados</p>
+
+            </div>
+        </div>
+
+        <section id="lista-cards" class="lista-cards"></section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Desapega+. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts na ordem certa -->
+    <script src="JS/checkStatus.js"></script>
+    <script src="JS/explorar.js"></script>
+
+    <script>
+        document.getElementById("btnSair").addEventListener("click", () => {
+            localStorage.removeItem("usuarioLogado");
+            window.location.href = "login.html";
+        });
+    </script>
+
+</body>
+</html>

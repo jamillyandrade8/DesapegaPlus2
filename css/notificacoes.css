@@ -1,0 +1,48 @@
+.not-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 10px 0;
+    box-shadow: 0 2px 6px #0002;
+}
+
+.not-card.nova {
+    border-left: 6px solid #007bff;
+}
+
+.not-card .acoes {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-marcar{
+    background: #28a745;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+.btn-remover{
+    background: #555;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+.notificacoes-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-notificacao {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

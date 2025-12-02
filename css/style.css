@@ -1,0 +1,137 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin: 0;
+}
+
+.logo span{
+    color: #fb8c00;
+}
+
+.subtexto{
+    color: #555;
+    margin: 20px 0;
+}
+
+
+.botao{
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.botao:hover {
+    background-color: #1b5e20;
+  }
+  
+  .botao-secundario {
+    background-color: #FB8C00;
+  }
+  
+  .botao-secundario:hover {
+    background-color: #ef6c00;
+  }
+
+  .link-login {
+    margin-top: 15px;
+    font-size: 0.99rem;
+  }
+  
+  .link-login a {
+    color: #fb8c00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .link-login a:hover {
+    text-decoration: underline;
+  }
+
+  .link-cadastro{
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  .link-cadastro a {
+    color: #fb8c00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .link-cadastro a:hover{
+    text-decoration: underline;
+  }
+
+  footer{
+    float: right;
+    margin: 20px;
+  }
+  
+  header {
+    background-color: #2e7d32; 
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  
+  header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .main-header .main-nav a:hover {
+    color: #fb8c00; /* efeito de hover só na Home */
+  }
+
+  .form-doar .btn {
+    margin-top: 10px;
+    padding: 14px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form-doar button:hover {
+    background-color:  #3b82f6;
+}

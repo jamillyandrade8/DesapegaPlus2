@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Desapega +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="logo"> Desapega <span>+</span></h1>
+        <p class="subtexto">Entre na sua conta para continuar</p>
+
+        <form class="formulario" id="form-login">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit" class="botao">Entrar</button>
+            <p class="link-cadastro">Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </form>
+
+
+    </div>
+
+    <script>
+        const form = document.getElementById("form-login"); // pega no html o elemento <form class="formulario" id="form-login">
+        //aí temos uma variável form que representa esse formulario
+    
+        form.addEventListener("submit", function (e) { //adicionar um listener "ouvinte" que espera o evento "submit" 
+            //function (e) essa função que vai rodar quando o formulario for enviado
+    
+            e.preventDefault(); 
+             /*o e. representa o proprio envio. o metodo preventDefault() impede o comportamento padrao do formulario, que seria recarregar a pagina 
+            e tentar enviar dados a um servidor. para manter o usuario na mesma pagina e tratar o envio via JS*/
+            
+            //Pega o que o usuário digitou nos campos
+            const nome = document.getElementById("nome").value; //seleciona o campo <input type="text" id="nome" name="nome" required> .value puxa o texto que o usuario digitou naquele input.
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+            
+            //simula login - aqui é a validacao de email e senha
+            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            //Recupera a lista de usuários cadastrados, feitos na tela de cadastro
+            
+            const usuarioEncontrado = usuarios.find(user => user.email === email && user.senha === senha);
+            /*O .find() procura dentro da lista um usuário que tenha o mesmo e-mail e a mesma senha
+            Se encontrar, guarda o objeto do usuário dentro de usuarioEncontrado
+            Se não encontrar, usuarioEncontrado fica undefined */
+            
+            if(usuarioEncontrado){
+                localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado)); //salvar o nome no navegador
+                //localStorage:É um objeto do navegador que permite armazenar pares chave–valor
+                //Se encontrou o usuário: Cria uma “sessão local” salvando ele como usuarioLogado no localStorage;
+                
+                window.location.href= "sobre.html";//redireciona para o home
+                //window.location.href: Representa o endereço (URL) atual do navegador.
+                //Atribuir um novo valor ("home.html") faz o navegador navegar para essa página. É como clicar num link em código
+            } else {
+                alert("Email ou senha incorretos!"); //Se não encontrou, mostra o alerta de erro
+            }
+        });
+    </script>
+</body>
+</html>

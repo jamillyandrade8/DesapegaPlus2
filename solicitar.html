@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solicitar | Desapega+</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="./css/solicitar.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="main-header">
+    <h1 class="logo">
+      <a href="home.html" style="text-decoration:none;color:white">
+        Desapega <span>+</span>
+      </a>
+    </h1>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="doar.html">Doar</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a id="botaoSair" href="javascript:void(0)">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="solicitar-container">
+      <h1 id="titulo">Carregando item...</h1>
+
+      <!-- Resumo do item -->
+      <div id="resumo" class="resumo" style="display:none;">
+        <img id="foto" src="" alt="Foto do item">
+        <p id="meta"></p>
+        <p id="descricao"></p>
+        <p id="informacoes"></p>
+      </div>
+
+      <!-- Mensagem de erro -->
+      <div id="erro" class="erro"></div>
+
+      <!-- Formulário de interesse -->
+      <form id="formInteresse" style="display:none; margin-top:20px;">
+        <h3>Como deseja manifestar interesse?</h3>
+
+        <div class="modalidades">
+          <label class="inline">
+            <input type="radio" name="modalidade" value="pago" checked>
+            Pago (ofereço um valor)
+          </label>
+
+          <label class="inline">
+            <input type="radio" name="modalidade" value="retira-gratis">
+            Retira grátis
+          </label>
+
+          <label class="inline">
+            <input type="radio" name="modalidade" value="cobro-retirada">
+            Cobro para retirar
+          </label>
+        </div>
+
+       
+        <div id="valorBox" class="campo-valor">
+          <label for="valor">Valor (R$)</label><br>
+          <input id="valor" type="number" step="0.5" min="0" placeholder="Ex: 10.00">
+        </div>
+
+     
+        <div class="acoes">
+          <button type="submit" class="botao" style="font-family: inherit;">Enviar interesse</button>
+          <button type="button" id="voltar" class="botao cancel" style="font-family: inherit;">Voltar</button>
+        </div>
+      </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Desapega+. Todos os direitos reservados.</p>
+  </footer>
+
+
+  <script src="JS/checkStatus.js"></script>
+  <script src="JS/solicitar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+.perfil-container {
+    max-width: 900px;
+    margin: 120px auto 40px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+}
+
+.perfil-container h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #003f2f;
+}
+
+.perfil-container p strong {
+    color: #007b5e;
+}
+
+.tabs {
+    display: flex;
+    gap: 6px;
+    margin: 25px 0;
+    border-bottom: 2px solid #dadada;
+    padding-bottom: 6px;
+   
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #444;
+    border-radius: 6px;
+    transition: .2s;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    background: #007b5e;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+.card {
+    display: flex;
+    gap: 16px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 18px;
+    transition: .2s;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+
+.card-foto {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+
+.card-info h3 {
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: #222;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 3px 0;
+}
+
+
+.status-badge {
+    display: inline-block;
+    background: #007b5e;
+    color: #fff;
+    padding: 3px 7px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-top: 6px;
+}
+
+
+.card-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.card-actions button {
+    border: none;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+.btn-aceitar {
+    background: #008f63;
+    color: #fff;
+}
+.btn-aceitar:hover {
+    background: #006c4b;
+}
+
+.btn-cancelar,
+.btn-cancelar-oferta {
+    background: #cc0000;
+    color: #fff;
+}
+.btn-cancelar:hover,
+.btn-cancelar-oferta:hover {
+    background: #a40000;
+}
+
+.btn-confirmar,
+.btn-confirmar-dono {
+    background: #0056d6;
+    color: #fff;
+}
+.btn-confirmar:hover,
+.btn-confirmar-dono:hover {
+    background: #003c9e;
+}

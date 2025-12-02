@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Desapega+</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header class="main-header">
+    <h1 class="logo">
+        <a href="index.html" style="text-decoration: none; color: white;">
+            Desapega <span>+</span>
+        </a>
+    </h1>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="explorar.html">Explorar</a></li>
+            <li><a href="notificacoes.html">🔔</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="perfil-container">
+
+    <h2>Olá, <span id="perfil-nome">Carregando...</span> 👋</h2>
+    <p>Email: <strong id="perfil-email">Carregando...</strong></p>
+
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="aba-ofertas">Minhas Ofertas</button>
+        <button class="tab-btn" data-tab="aba-solicitacoes">Solicitações Enviadas</button>
+        <button class="tab-btn" data-tab="aba-notificacoes">Interesses</button>
+    </div>
+
+    <div class="tab-content active" id="aba-ofertas">
+        <p>Carregando ofertas...</p>
+    </div>
+    <div class="tab-content" id="aba-solicitacoes">
+        <p>Carregando solicitações...</p>
+    </div>
+    <div class="tab-content" id="aba-notificacoes">
+        <p>Carregando notificações...</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 - Desapega+</p>
+</footer>
+
+<script src="JS/checkStatus.js"></script>
+<script src="JS/perfil.js"></script>
+
+</body>
+</html>

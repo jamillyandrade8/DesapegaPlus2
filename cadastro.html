@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Desapega</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">Desapega <span>+</span></h1>
+        <p class="subtexto">Crie sua conta e comece a desapegar!</p>
+
+        <form class="formulario" id="form-cadastro">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" placeholder="Nome completo" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Senha" required>
+
+            <button class="botao" type="submit">Cadastrar</button>
+
+            <p class="link-login"> Já tem conta? <a href="login.html">Entrar</a></p>
+        </form>
+    </div>
+
+    <script>
+        const formCadastro = document.getElementById("form-cadastro");
+
+        formCadastro.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+
+            const novoUsuario = {nome, email, senha}; 
+            //Cria um objeto JavaScript (como uma mini ficha) com os dados do novo usuário.
+
+            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            /*getItem("usuarios") tenta pegar a lista de usuários já cadastrados
+            Como o localStorage guarda só texto, usamos JSON.parse() pra transformar em array novamente
+            O || [] significa: se não houver ninguém salvo ainda, começa com um array vazio */
+
+            const existe = usuarios.some(user => user.email === email);
+            /*.some() percorre o array de usuários e verifica se já existe algum com o mesmo e-mail
+            Retorna true se encontrar, false se não encontrar, para evitar que alguem se cadastre com o mesmo email duas vezes */
+
+            if(existe){
+                alert("Este e-mail já está cadastrado!");
+                return;
+            }
+            /*Se existe for verdadeiro, o código vai mostrar um alerta 
+            e parar aqui e return sai da função, ou seja, não deixa criar o mesmo usuário de novo.*/
+
+            usuarios.push(novoUsuario);
+            //Adiciona o novo usuário ao array de usuários existentes
+
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            //Salva a lista atualizada de usuários no localStorage
+            /*Usamos JSON.stringify() pra transformar o array em texto novamente 
+            porque o localStorage só aceita texto */
+
+            alert("Cadastro realizado com sucesso!");
+            window.location.href = "login.html";
+            /*Mostra mensagem de sucesso e depois redireciona para a página de login.*/
+        });
+    </script>
+</body>
+</html>
